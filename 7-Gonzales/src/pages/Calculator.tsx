@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
-import './Calculator.css'; // Add your CSS file for styling
+// Calculalot.tsx
 
-const Calculator: React.FC = () => {
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import '../index.css';
+
+const Calculalot: React.FC = () => {
   const [expression, setExpression] = useState<string>('');
 
   const handleButtonClick = (value: string) => {
@@ -11,36 +14,39 @@ const Calculator: React.FC = () => {
       } catch (error) {
         setExpression('Error');
       }
-    } else if (value === 'c') {
+    } else if (value === 'AC') {
       setExpression('');
+    } else if (value === 'DEL') {
+      setExpression((prevExpression) => prevExpression.slice(0, -1));
     } else {
       setExpression((prevExpression) => prevExpression + value);
     }
   };
 
   return (
-    <div className="calculator">
-      <input
-        type="text"
-        placeholder="Enter Expression"
-        value={expression}
-        readOnly
-        className="expression-input"
-      />
+    <div className="calculator-star-body">
+      <div className="calculator-container">
+        <input
+          type="text"
+          placeholder="0"
+          value={expression}
+          readOnly
+          className="calculator-expression-input"
+        />
 
-      <div className="calculator-grid">
-        {[7, 8, 9, 'c', 4, 5, 6, '+', 1, 2, 3, '-', 0, '/', '*', '='].map((value, index) => (
-          <button key={index} onClick={() => handleButtonClick(value.toString())}>
-            {value}
-          </button>
-        ))}
+        <div className="calculator-grid">
+          {['AC', 'DEL', '%', '/', '7', '8', '9', '*', '4', '5', '6', '-', '1', '2', '3', '+', '00', '0', '.', '='].map((value, index) => (
+            <button key={index} className={value === '=' ? 'calculator-equal' : 'calculator-button'} onClick={() => handleButtonClick(value)}>
+              {value}
+            </button>
+          ))}
+        </div>
       </div>
-
-      <div className="back-to-home">
-        <a href="/">Back to Home</a>
+      <div className="calculator-back-button">
+        <Link to="/">Back to Home</Link>
       </div>
     </div>
   );
 };
 
-export default Calculator;
+export default Calculalot;

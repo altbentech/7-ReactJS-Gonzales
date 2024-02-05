@@ -1,0 +1,27 @@
+/* Hobbies.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
+
+.custom-font {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.hobbiesMainContainer {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.customContainer {
+  background-color: #f5f5f5;
+}
+
+.hobbiesList {
+  list-style-type: none;
+  padding: 0;
+}
+
+.hobbiesList li {
+  margin-bottom: 10px;
+  font-size: 18px;
+}

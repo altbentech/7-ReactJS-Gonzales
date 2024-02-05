@@ -1,14 +1,154 @@
-html, body, #root {
-  height: 100%;
-  margin: 0;
+/* index.css */
+
+/* Home.css */
+.home-body {
+  background-image: url('../src/images/homebg.jpg'); /* Adjust the path based on your project structure */
+  margin: 0; /* Remove default body margin */
+  padding: 0; /* Remove default body padding */
 }
 
-body {
+.home-main-container {
+  min-height: 100vh; /* Ensures the container takes at least the full height of the viewport */
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
-.app-container {
+/* Calculator.css */
+.calculator-star-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, rgb(7, 21, 7), rgb(36, 1, 39));
+}
+
+.calculator-container
+{
+    border: 1px solid #717377;
+    padding: 20px;
+    box-shadow: 0px 3px 15px rgba(113, 115, 119, 0.5);
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+.calculator-expression-input
+{
+    width: 320px;
+    padding: 10px;
+    font-size: 40px;
+    border: none;
+    background-color: transparent;
+    text-align: right;
+    box-shadow: 0px 3px 15px rgba(84, 84, 84, 0.1);
+    color: white;
+}
+
+.calculator-expression-input::placeholder
+{
+    color: white;
+}
+
+.calculator-grid
+{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.calculator-button
+{
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 8px;
+    margin: 10px;
+    background-color: transparent;
+    box-shadow: -2px -2px 5px rgba(113, 115, 119, 0.5);
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.calculator-button:hover
+{
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.calculator-equal
+{
+    background-color: orange;
+}
+.calculator-star-body {
+  position: relative;
+}
+
+.calculator-back-button {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 10px;
+}
+
+.calculator-back-button a {
+  background-color: orange;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.calculator-back-button a:hover {
+  background-color: darkorange;
+}
+/* Hobbies.css */
+
+.hobbies-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.hobby-row {
   text-align: center;
+  margin-bottom: 20px;
+}
+
+.hobby-title {
+  font-size: 2rem;
+  color: #333;
+}
+
+.card {
+  margin-bottom: 20px;
+}
+
+.card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.card h3 {
+  margin-top: 10px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.back-to-home {
+  margin-top: 20px;
+}
+
+.back-to-home a {
+  font-size: 1.2rem;
+  color: #007bff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.back-to-home a:hover {
+  text-decoration: underline;
 }
