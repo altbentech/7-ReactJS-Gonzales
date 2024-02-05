@@ -66,11 +66,13 @@ const App: React.FC = () => {
             </p>
           </div>
           <div className="btn-container">
+          <Link to="/LearnMore">
           <button
             className="btn btn-color-2"
           >
             Learn More
           </button>
+          </Link>
         </div>
         </div>
       </section>

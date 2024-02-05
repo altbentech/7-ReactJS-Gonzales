@@ -5,6 +5,7 @@ import Home from './Home';
 import Calculator from './Calculator';
 import Hobbies from './Hobbies';
 import JSON from './JSON';
+import LearnMore from './LearnMore';
 
 function App() {
   {/*
@@ -21,6 +22,7 @@ function App() {
 
             {/* Page routing */}
             <Route path="/home" element={<Home />} />
+            <Route path="/learn" element={<LearnMore />} />
             <Route path="/hobbies" element={<Hobbies />} />
             <Route path="/calculator" element={<Calculator/>} />
             <Route path="/json" element={<JSON />} />
