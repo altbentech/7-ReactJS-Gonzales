@@ -1,57 +1,81 @@
-// Home.tsx
-
 import React from "react";
-import { Container, Row, Col, Button } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import profileImage from "../images/reactProjectProfile.jpg";
-import '../index.css';
+import profileImage from "../images/proj-profile.jpg";
+import "./style.css";
 
-const Home: React.FC = () => {
+const toggleMenu = () => {
+  // Add your toggleMenu logic here
+};
+
+const App: React.FC = () => {
   return (
-    <div className="main-container"> {/* Apply background color to the main container */}
-      <Container className="text-center mt-5">
-        <Row className="justify-content-center align-items-center">
-          <Col md={6}>
-            <div className="rounded-circle overflow-hidden mx-auto" style={{ width: "200px", height: "200px" }}>
-              <img
-                src={profileImage}
-                alt="Profile"
-                className="img-fluid rounded-circle"
-                style={{ width: "100%", height: "100%", objectFit: "cover" }}
-              />
-            </div>
-            <h1 className="my-3 custom-font">Benjie Gonzales Jr.</h1>
-            <h2 className="mb-4 custom-font">Web Developer</h2>
-
-            <Container className="border rounded p-4 mt-4">
-              <p>
-                Hi! I'm a passionate web developer. Welcome to my personal website. Click the button
-                below to learn more about me and explore my projects.
-              </p>
-              <Button variant="primary" className="mt-3">
-                Learn More
-              </Button>
-            </Container>
-
-            <div className="mt-4">
-              <div className="btn-group" role="group" aria-label="Basic outlined example">
-                <Link to="/Calculator">
-                  <Button variant="outline-primary">Calculator</Button>
-                </Link>
-                <Link to="/JSON">
-                  <Button variant="outline-primary">JSON</Button>
-                </Link>
-                <Link to="/Hobbies">
-                  <Button variant="outline-primary">Hobbies</Button>
-                </Link>
-              </div>
-            </div>
-          </Col>
-        </Row>
-      </Container>
+    <div>
+      <nav id="desktop-nav">
+        <div className="logo">Digital Transformation</div>
+        <div>
+          <ul className="nav-links">
+            <li>
+              <a href="#about">About Me</a>
+            </li>
+            <Link to="/Calculator">
+              <li>
+                <a>Calculator</a>
+              </li>
+            </Link>
+            <Link to="/JSON">
+              <li>
+                <a>JSON</a>
+              </li>
+            </Link>
+            <Link to="/Hobbies">
+              <li>
+                <a>Hobbies</a>
+              </li>
+            </Link>
+          </ul>
+        </div>
+      </nav>
+      <nav id="hamburger-nav">
+        <div className="logo">Benjie Gonzales Jr.</div>
+        <div className="hamburger-menu">
+          <div className="hamburger-icon" onClick={toggleMenu}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </nav>
+      <section id="profile">
+        <div className="section__pic-container">
+          <img
+            src={profileImage}
+            alt="Profile"
+            className="img-fluid rounded-circle"
+            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+          />
+        </div>
+        <div className="section__text">
+          <p className="section__text__p1">Hello, I'm</p>
+          <h1 className="title">Benjie Gonzales Jr</h1>
+          <p className="section__text__p2">Frontend Developer</p>
+          <div className="section__text">
+            <p className="section__text__p1">
+              Hi! I'm a passionate web developer. Click the button below to
+              learn more about me.
+            </p>
+          </div>
+          <div className="btn-container">
+          <button
+            className="btn btn-color-2"
+          >
+            Learn More
+          </button>
+        </div>
+        </div>
+      </section>
     </div>
   );
 };
 
-export default Home;
+export default App;
