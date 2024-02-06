@@ -28,11 +28,6 @@ const App: React.FC = () => {
                 <a>JSON</a>
               </li>
             </Link>
-            <Link to="/Hobbies">
-              <li>
-                <a>Hobbies</a>
-              </li>
-            </Link>
           </ul>
         </div>
       </nav>
@@ -66,12 +61,9 @@ const App: React.FC = () => {
             </p>
           </div>
           <div className="btn-container">
-          <Link to="/LearnMore">
-          <button
-            className="btn btn-color-2"
-          >
-            Learn More
-          </button>
+          {/* Use Link component to navigate to "/LearnMore" */}
+          <Link to="/Hobbies">
+            <button className="btn btn-color-2">Learn More</button>
           </Link>
         </div>
         </div>

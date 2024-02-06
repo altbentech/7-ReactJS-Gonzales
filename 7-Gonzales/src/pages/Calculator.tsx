@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import '../index.css';
 
 const Calculalot: React.FC = () => {
+  const operators = ['*', '/', '+', '-']
   const [expression, setExpression] = useState<string>('');
 
   const handleButtonClick = (value: string) => {
@@ -18,7 +19,12 @@ const Calculalot: React.FC = () => {
       setExpression('');
     } else if (value === 'DEL') {
       setExpression((prevExpression) => prevExpression.slice(0, -1));
-    } else {
+    } 
+    else {
+      // If at this point, check mo muna if yung current value is an operator
+        // tapos yung last ng expression ay opeator rin. Yung gawin mo: 
+          // replace the last ng expression with the current operator (yung nasa value)
+      // Else, if yung last ng expression ay just numbers: proceed with line 28.
       setExpression((prevExpression) => prevExpression + value);
     }
   };
