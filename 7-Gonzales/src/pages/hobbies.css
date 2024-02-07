@@ -54,20 +54,18 @@ body {
   .card__container {
     display: grid;
     row-gap: 3.5rem;
-    justify-content: center; /* Center items horizontally */
   }
-
+  
   .card__article {
     position: relative;
     overflow: hidden;
-    bottom: -50; /* Adjust this value to move the images upward */
   }
-
-.card__img {
-    width: 600px; /* Adjust the width to your desired size */
+  
+  .card__img {
+    width: 328px;
     border-radius: 1.5rem;
   }
-
+  
   .card__data {
     width: 280px;
     background-color: var(--container-color);
@@ -75,7 +73,7 @@ body {
     box-shadow: 0 8px 24px hsla(0, 0%, 0%, .15);
     border-radius: 1rem;
     position: absolute;
-    bottom: -9rem; /* This value determines the initial position, adjust as needed */
+    bottom: -9rem;
     left: 0;
     right: 0;
     margin-inline: auto;
